@@ -22,12 +22,12 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 
 	// todo: create your "renderQuestion" function
 	const renderQuestion = async ({ question, answers, correct }) => {
-		questionElement.textContent = question
+		questionElement.textContent = decodeHtml(question)
 		answersElement.innerHTML = ''
 
 		answers.forEach(answer => {
 			const button = document.createElement('button')
-			button.textContent = answer
+			button.textContent = decodeHtml(answer)
 
 			answersElement.append(button)
 
